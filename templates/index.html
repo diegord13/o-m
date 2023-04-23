@@ -1,0 +1,53 @@
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+{% for message in messages %}
+    <p>{{ message }}</p>
+
+{% endfor %}
+{% endif %}
+{% endwith %}
+
+<!-- Envia los datos del formulario a la ruta add con el metodo POST -->
+<!--<form action = "/add" method='POST'>-->
+<form action="/add" method="post" enctype="multipart/form-data">
+    Seleccione el archivo:
+    <input type="file" name="archivo" multiple><br>
+    <input type="submit" value="Enviar">
+      
+   <!-- <input type="text" name= "nombre" placeholder="nombre">
+    <input type="text" name="telefono" placeholder="telefono">
+    <input type="text" name="email" placeholder="email">
+    <button type="submit">
+        save
+
+    </button>-->
+
+
+</form>
+
+<!--<table>
+    <thead>
+        <tr>
+            <td>nombre</td>
+            <td>telefono</td>
+            <td>email</td>
+        </tr>
+    </thead>
+    <tbody>
+         Para listar los datos agregados en la base de datos 
+        {% for contacto in contactos %}
+            <tr>
+                <td>{{ contacto.1 }}</td>
+                <td>{{ contacto.2 }}</td>
+                <td>{{ contacto.3 }}</td>
+                <td>
+                    <a href="/edit/{{contacto.0}}">edit</a>
+                    <a href="/delete/{{contacto.0}}">Delete</a>
+
+
+
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>-->
